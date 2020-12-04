@@ -1,5 +1,11 @@
 FROM nvidia/cuda:10.2-cudnn8-devel-ubuntu18.04
 
+ENV TZ=Europe/Ireland
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt update
+RUN apt install -y tzdata
+
 RUN echo "Installing dependencies..." && \
 	apt-get -y --no-install-recommends update && \
 	apt-get -y --no-install-recommends upgrade && \
