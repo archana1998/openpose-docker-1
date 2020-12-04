@@ -4,7 +4,7 @@ ENV TZ=Europe/Ireland
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt update
-RUN apt install -y tzdata
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 
 RUN echo "Installing dependencies..." && \
 	apt-get -y --no-install-recommends update && \
