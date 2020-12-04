@@ -32,7 +32,7 @@ RUN echo "Installing dependencies..." && \
 	libviennacl-dev \
 	libcanberra-gtk-module \
 	libopencv-dev && \
-	python3 -m pip install --upgrade pip
+	python3 -m pip install --upgrade pip \
 	python3 -m pip install \
 	numpy \
 	protobuf \
